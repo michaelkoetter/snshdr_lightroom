@@ -1,6 +1,10 @@
-﻿"$$$/SNSHDR/ExportDialog/Configuration=SNS-HDR Konfiguration"
-"$$$/SNSHDR/ExportDialog/Configuration/Application=SNS-HDR Lite Applikation"
+﻿"$$$/SNSHDR/Error=Fehler"
+
+"$$$/SNSHDR/ExportDialog/Configuration=SNS-HDR Konfiguration"
+"$$$/SNSHDR/ExportDialog/Configuration/Application=SNS-HDR Anwendung"
 "$$$/SNSHDR/ExportDialog/Configuration/SelectApplication=Auswählen..."
+"$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsDisabled=Sie benutzen anscheinend SNS-HDR Pro, Einstellungen sind nicht verfügbar."
+"$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsEnabled=SNS-HDR Lite Einstellungen sind verfügbar."
 
 "$$$/SNSHDR/ExportDialog/Settings=SNS-HDR Einstellungen"
 "$$$/SNSHDR/ExportDialog/Settings/SelectAtExportTime=Zum Export-Zeitpunkt einstellen (nützlich für Export-Vorgaben)"
@@ -14,5 +18,10 @@
 "$$$/SNSHDR/ExportDialog/Settings/sRGB=sRGB Farbraum benutzen"
 "$$$/SNSHDR/ExportDialog/Configuration/Reimport=Erzeugte Datei automatisch importieren"
 
+"$$$/SNSHDR/ExportDialog/IncompatibleImageFormat=Inkompatibles Dateiformat"
+"$$$/SNSHDR/ExportDialog/IncompatibleImageFormatMsg=Das SNS-HDR Plugin kann nur die Original-Dateien benutzen, wenn die 'Pro' Version verwendet wird.\nIhre Einstellung '^1' wird ignoriert."
+
 "$$$/SNSHDR/Export/Progress=Exportiere ^1 Fotos"
 "$$$/SNSHDR/Export/Import=Erzeugte Datei importieren"
+"$$$/SNSHDR/Export/WaitingForProcessedImage=Warte auf HDR Datei..."
+"$$$/SNSHDR/Export/ErrorExecutingCommand=Fehler beim Ausführen der SNS-HDR Anwendung!"
