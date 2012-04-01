@@ -19,7 +19,7 @@
 "$$$/SNSHDR/ExportDialog/Configuration/Reimport=Erzeugte Datei automatisch importieren"
 
 "$$$/SNSHDR/ExportDialog/IncompatibleImageFormat=Inkompatibles Dateiformat"
-"$$$/SNSHDR/ExportDialog/IncompatibleImageFormatMsg=Das SNS-HDR Plugin kann nur die Original-Dateien benutzen, wenn die 'Pro' Version verwendet wird.\nIhre Einstellung '^1' wird ignoriert."
+"$$$/SNSHDR/ExportDialog/IncompatibleImageFormatMsg=Das SNS-HDR Plugin kann nur die Original-Dateien benutzen, wenn die 'Pro' Version verwendet wird. Ihre Einstellung '^1' wird ignoriert."
 
 "$$$/SNSHDR/Export/Progress=Exportiere ^1 Fotos"
 "$$$/SNSHDR/Export/Import=Erzeugte Datei importieren"

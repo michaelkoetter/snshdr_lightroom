@@ -99,7 +99,7 @@ function SNSHDRDialogs.updateExportSettings( exportSettings )
     if not exportSettings.enable_lite_options and exportSettings.LR_format ~= "ORIGINAL" then
         LrDialogs.message(LOC "$$$/SNSHDR/ExportDialog/IncompatibleImageFormat=Incompatible Image Format",
             LOC("$$$/SNSHDR/ExportDialog/IncompatibleImageFormatMsg=The SNS-HDR plugin can only work with the" ..
-                " original files if the 'Pro' version is used.\nYour format setting '^1' will be ignored.", exportSettings.LR_format ))
+                " original files if the 'Pro' version is used. Your format setting '^1' will be ignored.", exportSettings.LR_format ))
     end
 end
 
