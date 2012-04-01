@@ -1,5 +1,8 @@
 ------------------------------------------------------------------------------------------
--- Copyright (c) 2012 Michael Kötter - http://github.com/michaelkoetter/snshdr_lightroom
+-- SNS-HDR Lightroom Plugin
+-- http://github.com/michaelkoetter/snshdr_lightroom
+--
+-- Copyright (c) 2012 Michael Kötter
 -- All rights reserved.
 --
 -- Redistribution and use in source and binary forms, with or without
@@ -25,21 +28,25 @@
 -- THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ------------------------------------------------------------------------------------------
 
+local LrPathUtils = import 'LrPathUtils'
+local LrColor = import 'LrColor'
+local LrHttp = import 'LrHttp'
+
 local pluginInfoProvider = {}
 
-pluginInfoProvider.sectionsForTopOfDialog = function( f, propertyTable )
+pluginInfoProvider.sectionsForBottomOfDialog = function( f, propertyTable )
+    local licenseFile = assert(io.open(_PLUGIN:resourceId("LICENSE"), "r"))
+    local licenseText = licenseFile:read("*all")
+
 	return {
 		{
-			title = LOC "$$$/SNSHDR/PluginInfo/Title=Plugin Info",
+			title = LOC "$$$/SNSHDR/License/Title=SNS-HDR Lightroom Plugin License",
 			
 			f:row {
 				spacing = f:control_spacing(),
 				
 				f:static_text {
-					title = "Copyright (C) 2012 Michael Kötter - http://github.com/michaelkoetter/snshdr_lightroom \
-All rights reserved. \
-\
-See 'LICENSE' for details."
+					title = licenseText
 				}
 			}
 		}

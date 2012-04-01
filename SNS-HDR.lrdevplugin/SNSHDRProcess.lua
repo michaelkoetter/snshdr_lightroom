@@ -1,5 +1,8 @@
 ------------------------------------------------------------------------------------------
--- Copyright (c) 2012 Michael Kötter - http://github.com/michaelkoetter/snshdr_lightroom
+-- SNS-HDR Lightroom Plugin
+-- http://github.com/michaelkoetter/snshdr_lightroom
+--
+-- Copyright (c) 2012 Michael Kötter
 -- All rights reserved.
 --
 -- Redistribution and use in source and binary forms, with or without
