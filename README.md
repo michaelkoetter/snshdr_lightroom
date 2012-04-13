@@ -20,4 +20,4 @@ Installation & Usage
 - Use the export dialog to send your files to SNS-HDR. 
   You can configure all available options of the "Lite" version here.
   
-![Screenshot](site/screenshot.jpg)
+![Screenshot](snshdr_lightroom/raw/master/site/screenshot.jpg)
