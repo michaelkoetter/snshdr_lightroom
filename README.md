@@ -3,8 +3,9 @@ SNS-HDR Lightroom Plugin
 
 http://github.com/michaelkoetter/snshdr_lightroom
 
-*Copyright (c) 2012 Michael Kötter*
+*Copyright (c) 2012 Michael Kötter.*
 *All rights reserved.*
+*See LICENSE for details.*
 
 This is a Lightroom plugin to facilitate the use of SNS-HDR Lite, Pro and Home (http://www.sns-hdr.com/).
 If you use SNS-HDR Pro/Home, some of the options will not be available in the plugin (because they are
