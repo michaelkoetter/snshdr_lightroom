@@ -34,6 +34,7 @@ local LrPathUtils = import 'LrPathUtils'
 local LrTasks = import 'LrTasks'
 local LrFunctionContext = import 'LrFunctionContext'
 local LrProgressScope = import 'LrProgressScope'
+local LrExportSettings = import 'LrExportSettings'
 
 local SNSHDRProcess = {}
 
@@ -74,6 +75,20 @@ function SNSHDRProcess.getProcessedImage( functionContext, callbackFile )
 
 end
 
+function SNSHDRProcess.getOutputFile( renditionFile, numRenditions, format )
+    local prefix = LrPathUtils.removeExtension( renditionFile )
+    local extension
+
+    if format == 'jpeg' then
+        extension = LrExportSettings.extensionForFormat( 'JPEG' )
+    else
+        extension = LrExportSettings.extensionForFormat( 'TIFF' )
+    end
+
+    return prefix .. '_SNSHDR_' .. numRenditions .. '.' .. extension
+end
+
+
 function SNSHDRProcess.processExport( exportContext )
     local exportSession = exportContext.exportSession
     local exportSettings = assert( exportContext.propertyTable )
@@ -88,11 +103,14 @@ function SNSHDRProcess.processExport( exportContext )
 
     -- collect rendered files...
     local renditionDir
+    local renditionFile
     local sourceDir
+
     local files = ""
 
     for i, rendition in exportContext:renditions() do
         renditionDir = LrPathUtils.parent( rendition.destinationPath )
+        renditionFile = rendition.destinationPath
         sourceDir = LrPathUtils.parent( rendition.photo:getRawMetadata('path') )
 
         if not rendition.wasSkipped then
@@ -142,6 +160,9 @@ function SNSHDRProcess.processExport( exportContext )
     end
 
     cmd = cmd .. ' -' .. exportSettings.output_format
+
+    -- specify output file
+    cmd = cmd .. ' -o "' .. SNSHDRProcess.getOutputFile( renditionFile, nPhotos, exportSettings.output_format ) .. '"'
 
     -- create & append callback script
     postProcessCommand, callbackFile = SNSHDRProcess.createPostProcessCommand( renditionDir );
