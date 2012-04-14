@@ -91,22 +91,15 @@ function SNSHDRProcess.processExport( exportContext )
     local sourceDir
     local files = ""
 
-    -- we skip all renditions if the 'Pro' version is used
-    for i, rendition in exportSession:renditions() do
-        if not exportSettings.enable_lite_options then
-            rendition:skipRender()
-        end
-    end
-
     for i, rendition in exportContext:renditions() do
         renditionDir = LrPathUtils.parent( rendition.destinationPath )
         sourceDir = LrPathUtils.parent( rendition.photo:getRawMetadata('path') )
 
-        -- use source (original) images if rendition was skipped
         if not rendition.wasSkipped then
             files = files .. ' "' .. rendition.destinationPath .. '"'
             rendition:waitForRender()
         else
+            -- use source (original) images if rendition was skipped
             files = files .. ' "' .. rendition.photo:getRawMetadata( 'path' ) .. '"'
         end
     end
@@ -121,10 +114,10 @@ function SNSHDRProcess.processExport( exportContext )
 
     if WIN_ENV == true then
         -- open the command in a visible window
-        cmd = 'START "SNS-HDR Lite" ' .. cmd
+        cmd = 'START "SNS-HDR" ' .. cmd
     end
 
-    -- currently, only the "Lite" version accepts commandline options
+    -- currently, only the "Lite" version accepts these commandline options
     if exportSettings.enable_lite_options then
         if not exportSettings.alignment then
             cmd = cmd .. ' -da'
@@ -138,18 +131,21 @@ function SNSHDRProcess.processExport( exportContext )
             cmd = cmd .. ' -pm'
         end
 
-        if exportSettings.srgb then
-            cmd = cmd .. ' -srgb'
-        end
-
         cmd = cmd .. ' -' .. exportSettings.size
         cmd = cmd .. ' -' .. exportSettings.preset
-        cmd = cmd .. ' -' .. exportSettings.output_format
-
-        -- create & append callback script
-        postProcessCommand, callbackFile = SNSHDRProcess.createPostProcessCommand( renditionDir );
-        cmd = cmd .. ' -ee "' .. postProcessCommand .. '"'
     end
+
+    -- all version support the following options
+
+    if exportSettings.srgb then
+        cmd = cmd .. ' -srgb'
+    end
+
+    cmd = cmd .. ' -' .. exportSettings.output_format
+
+    -- create & append callback script
+    postProcessCommand, callbackFile = SNSHDRProcess.createPostProcessCommand( renditionDir );
+    cmd = cmd .. ' -ee "' .. postProcessCommand .. '"'
 
     -- append rendered files
     cmd = cmd .. files
@@ -164,7 +160,6 @@ function SNSHDRProcess.processExport( exportContext )
 
     progress:done()
 
-    -- currently, this works only for the "Lite" version
     if callbackFile ~= nil then
         -- wait for the callback file / processed image to appear
         local processedImage = LrFunctionContext.callWithContext(

@@ -78,8 +78,7 @@ function SNSHDRDialogs.configuration( f, propertyTable )
                 visible = LrBinding.negativeOfKey 'enable_lite_options',
                 f:row {
                     f:static_text {
-                        title = LOC "$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsDisabled=It looks like you are using SNS-HDR Pro, settings will be disabled.",
-                        font = "<system/bold>"
+                        title = LOC "$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsDisabled=It looks like you are using SNS-HDR Pro/Home, some settings will be disabled.",
                     }
                 },
             },
@@ -98,16 +97,10 @@ function SNSHDRDialogs.configuration( f, propertyTable )
 end
 
 
-function SNSHDRDialogs.updateExportSettings( exportSettings )
-    if not exportSettings.enable_lite_options and exportSettings.LR_format ~= "ORIGINAL" then
-        LrDialogs.message(LOC "$$$/SNSHDR/ExportDialog/IncompatibleImageFormat=Incompatible Image Format",
-            LOC("$$$/SNSHDR/ExportDialog/IncompatibleImageFormatMsg=The SNS-HDR plugin can only work with the" ..
-                " original files if the 'Pro' version is used. Your format setting '^1' will be ignored.", exportSettings.LR_format ))
-    end
-end
-
 function SNSHDRDialogs.applicationChanged( properties )
     if string.find(properties.application, "Pro.exe") ~= nil then
+        properties.enable_lite_options = false
+    elseif string.find(properties.application, "Home.exe") ~= nil then
         properties.enable_lite_options = false
     else
         properties.enable_lite_options = true
@@ -216,7 +209,6 @@ function SNSHDRDialogs.exportSettings( f, propertyTable )
             },
 
             f:popup_menu {
-                enabled = bind 'enable_lite_options',
                 value = bind 'output_format',
                 width = 100,
                 items = {
@@ -227,7 +219,6 @@ function SNSHDRDialogs.exportSettings( f, propertyTable )
             },
 
             f:checkbox {
-                enabled = bind 'enable_lite_options',
                 title = LOC "$$$/SNSHDR/ExportDialog/Settings/sRGB=Use sRGB colorspace",
                 value = bind 'srgb'
             }
@@ -240,7 +231,6 @@ function SNSHDRDialogs.exportSettings( f, propertyTable )
             },
 
             f:checkbox {
-                enabled = bind 'enable_lite_options',
                 title = LOC "$$$/SNSHDR/ExportDialog/Configuration/Reimport=Automatically import tonemapped file",
                 value = bind 'reimport'
             }

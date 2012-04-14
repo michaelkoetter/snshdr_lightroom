@@ -43,6 +43,6 @@ return {
 	
 	LrPluginInfoProvider = 'SNSHDRPluginInfoProvider.lua',
 	
-	VERSION = { major=1, minor=1, revision=0, build=9999, },
+	VERSION = { major=1, minor=2, revision=0, build=9999, },
 
 }
