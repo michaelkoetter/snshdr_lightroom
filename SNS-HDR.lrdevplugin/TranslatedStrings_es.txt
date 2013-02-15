@@ -1,0 +1,35 @@
+"$$$/SNSHDR/Error=Error"
+
+"$$$/SNSHDR/ExportDialog/Configuration=SNS-HDR Configuracion"
+"$$$/SNSHDR/ExportDialog/Configuration/Application=SNS-HDR Aplicacion"
+"$$$/SNSHDR/ExportDialog/Configuration/SelectApplication=Buscar
+Aplicacion..."
+"$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsDisabled=Estas usando la
+version Pro/Home, algunos ajustes no estaran disponibles porque se podran
+ajustar posteriormente."
+"$$$/SNSHDR/ExportDialog/Configuration/LiteOptionsEnabled= Los ajustes de la
+version SNS-HDR Lite estan activos."
+
+"$$$/SNSHDR/ExportDialog/Settings=SNS-HDR Preferencias"
+"$$$/SNSHDR/ExportDialog/Settings/SelectAtExportTime=Seleccione el tiempo de
+exportacion"
+"$$$/SNSHDR/ExportDialog/Settings/Options=Opciones"
+"$$$/SNSHDR/ExportDialog/Settings/Alignment=Alinear imagenes"
+"$$$/SNSHDR/ExportDialog/Settings/Deghosting=Quitar fantasmas"
+"$$$/SNSHDR/ExportDialog/Settings/Panorama=Modo panoramico"
+"$$$/SNSHDR/ExportDialog/Settings/SizeReduction=Reducir imagen"
+"$$$/SNSHDR/ExportDialog/Settings/Preset=HDR Presets"
+"$$$/SNSHDR/ExportDialog/Settings/OutputFormat=Formato de salida"
+"$$$/SNSHDR/ExportDialog/Settings/sRGB=Usar espacio de color sRGB"
+"$$$/SNSHDR/ExportDialog/Configuration/Reimport=Importar automaticamente los
+archivos procesados."
+
+"$$$/SNSHDR/ExportDialog/IncompatibleImageFormat=Formato de imagen
+incompatible"
+
+"$$$/SNSHDR/Export/Progress=Exportar ^1 fotos"
+"$$$/SNSHDR/Export/Import=Importar el archivo creado"
+"$$$/SNSHDR/Export/WaitingForProcessedImage=Esperando la imagen
+procesada..."
+"$$$/SNSHDR/Export/ErrorExecutingCommand=Falta SNS-HDR para realizar la
+exportacion"
