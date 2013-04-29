@@ -34,4 +34,4 @@ If you are using SNS-HDR Pro/Home, just save the file at the default (temporary)
 are done in the GUI. It will then be moved to the folder of your source images (and optionally added to the
 Lightroom library).
   
-![Screenshot](snshdr_lightroom/raw/master/site/screenshot.jpg)
+![Screenshot](site/screenshot.jpg)
